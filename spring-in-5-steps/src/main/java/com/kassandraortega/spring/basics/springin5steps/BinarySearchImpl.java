@@ -7,9 +7,11 @@ public class BinarySearchImpl {
 		BubbleSortAlgorithm bubbleSortAlgorithm = new BubbleSortAlgorithm();
 		
 		int[] sortedNumbers = bubbleSortAlgorithm.sort(numbers);
+		
 		// Implementing Sorting Logic
 		// Bubble Sort Algorithm
 		// Return the result
+		
 		return 3;
 	}
 }
