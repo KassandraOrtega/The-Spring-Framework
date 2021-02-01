@@ -8,9 +8,8 @@ public class BinarySearchImpl {
 	
 	@Autowired
 	private SortAlgorithm sortAlgorithm;
-	
-	public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-		super();
+
+	public void setSortAlgorithm(SortAlgorithm sortAlgorithm) {
 		this.sortAlgorithm = sortAlgorithm;
 	}
 
@@ -18,11 +17,7 @@ public class BinarySearchImpl {
 		
 		int[] sortedNumbers = sortAlgorithm.sort(numbers);
 		System.out.println(sortAlgorithm);
-		
-		// Implementing Sorting Logic
-		// Bubble Sort Algorithm
-		// Return the result
-		
+		// Search the array.
 		return 3;
 	}
 }
