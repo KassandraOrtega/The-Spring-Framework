@@ -2,32 +2,32 @@ package com.kassandraortega.junit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class MyMathTest {
 
 	MyMath myMath = new MyMath();
 	
-	@Before
+	@BeforeEach
 	public void before() {
 		System.out.println("Before");
 	}
 	
-	@After
+	@AfterEach
 	public void after() {
 		System.out.println("After");
 	}
 	
-	@BeforeClass
+	@BeforeAll
 	public static void beforeClass() {
 		System.out.println("Before Class");
 	}
 	
-	@AfterClass
+	@AfterAll
 	public static void afterClass() {
 		System.out.println("After Class");
 	}
