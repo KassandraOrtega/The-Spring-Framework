@@ -1,12 +1,15 @@
 package com.kassandraortega.spring.basics.springin5steps;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.kassandraortega.spring.basics.springin5steps.basic.BinarySearchImpl;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class SpringIn5StepsBasicApplication {
 
 	// What are the beans? => Find using the @Component
@@ -19,11 +22,14 @@ public class SpringIn5StepsBasicApplication {
 		//System.out.println(result);
 		
 		// Application Context
-		ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsBasicApplication.class, args);
+		try(AnnotationConfigApplicationContext applicationContext = 
+				new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class)){
 		
-		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
+		BinarySearchImpl binarySearch = 
+				applicationContext.getBean(BinarySearchImpl.class);
 		
-		BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+		BinarySearchImpl binarySearch1 = 
+				applicationContext.getBean(BinarySearchImpl.class);
 		
 		System.out.println(binarySearch + "\n" +binarySearch1);
 		
@@ -31,6 +37,8 @@ public class SpringIn5StepsBasicApplication {
 		
 		System.out.println(result);
 		
+		//applicationContext.close();
+		}
 		//SpringApplication.run(SpringIn5StepsApplication.class, args);
 	}
 
