@@ -1,9 +1,10 @@
 package com.kassandraortega.spring.basics.springin5steps.scope;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class PersonDAO {
 	
 	@Autowired

@@ -10,10 +10,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import ch.qos.logback.classic.Logger;
 
-@Component
+@Service
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 //Default is singleton, use scope to change it to prototype.
 public class BinarySearchImpl {

@@ -1,11 +1,10 @@
 package com.kassandraortega.spring.basics.componentscan;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import com.kassandraortega.spring.basics.springin5steps.scope.JdbcConnection;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class ComponentDAO {
 	
 	@Autowired
