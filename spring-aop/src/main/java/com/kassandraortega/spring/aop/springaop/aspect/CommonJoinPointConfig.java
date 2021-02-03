@@ -18,4 +18,7 @@ public class CommonJoinPointConfig {
 	
 	@Pointcut("within(com.kassandraortega.spring.aop.springaop.data..*")
 	public void dataLayerExecutionWithWithin(){}
+	
+	@Pointcut("@annotation(com.kassandraortega.spring.aop.springaop.aspect.TrackTime)")
+	public void trackTimeAnnotation(){}
 }
