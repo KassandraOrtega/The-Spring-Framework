@@ -10,12 +10,14 @@ import org.springframework.context.annotation.Configuration;
 
 @Aspect
 @Configuration
-public class UseAccessAspect {
+public class UserAccessAspect {
 	
 	private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 	
-	@Before("execution(* com.kassandraortega.spring.aop.springaop.business.*.*(..))")
+	// PointCut - What kind of method calls I would intercept
+	@Before("execution(* com.kassandraortega.spring.aop.springaop.data.*.*(..))")
 	public void before(JoinPoint joinPoint) {
+		// Advice
 		((org.slf4j.Logger) logger).info("Check for user access ");
 		((org.slf4j.Logger) logger).info("Allowed execution for {}", joinPoint);
 	}
