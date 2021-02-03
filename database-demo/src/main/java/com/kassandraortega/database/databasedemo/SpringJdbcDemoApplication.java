@@ -13,7 +13,7 @@ import com.kassandraortega.database.databasedemo.entity.Person;
 import com.kassandraortega.database.databasedemo.jdbc.PersonJbdcDao;
 
 @SpringBootApplication
-public class DatabaseDemoApplication implements CommandLineRunner {
+public class SpringJdbcDemoApplication implements CommandLineRunner {
 
 	private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
@@ -21,7 +21,7 @@ public class DatabaseDemoApplication implements CommandLineRunner {
 	PersonJbdcDao dao;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DatabaseDemoApplication.class, args);
+		SpringApplication.run(SpringJdbcDemoApplication.class, args);
 	}
 
 	@Override
