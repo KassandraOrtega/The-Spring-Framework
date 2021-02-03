@@ -18,13 +18,13 @@ public class AfterAopAspect {
 	private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 	
 	@AfterReturning(
-			value = "execution(* com.kassandraortega.spring.aop.springaop.business.*.*(..))",
+			value = "com.kassandraortega.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
 			returning = "result")
 	public void afterReturning(JoinPoint joinPoint, Object result) {
 		((org.slf4j.Logger) logger).info("{} returned with value {}", joinPoint, result);
 	}
 	
-	@After(value = "execution(* com.kassandraortega.spring.aop.springaop.business.*.*(..))")
+	@After(value = "com.kassandraortega.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
 	public void after(JoinPoint joinPoint) {
 		((org.slf4j.Logger) logger).info("after execution of {}", joinPoint);
 	}

@@ -15,7 +15,7 @@ public class UserAccessAspect {
 	private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 	
 	// PointCut - What kind of method calls I would intercept
-	@Before("execution(* com.kassandraortega.spring.aop.springaop.data.*.*(..))")
+	@Before("com.kassandraortega.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
 	public void before(JoinPoint joinPoint) {
 		// Advice
 		((org.slf4j.Logger) logger).info("Check for user access ");
