@@ -12,17 +12,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.kassandraortega.database.databasedemo.entity.Person;
 import com.kassandraortega.database.databasedemo.jdbc.PersonJbdcDao;
 import com.kassandraortega.database.databasedemo.jpa.PersonJpaRepository;
+import com.kassandraortega.database.databasedemo.springdata.PersonSpringDataRepository;
 
-//@SpringBootApplication
-public class JpaDemoApplication implements CommandLineRunner {
+@SpringBootApplication
+public class SpringDataDemoApplication implements CommandLineRunner {
 
 	private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	PersonJpaRepository repository;
+	PersonSpringDataRepository repository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpaDemoApplication.class, args);
+		SpringApplication.run(SpringDataDemoApplication.class, args);
 	}
 
 	@Override
@@ -31,10 +32,10 @@ public class JpaDemoApplication implements CommandLineRunner {
 		((org.slf4j.Logger) logger).info("User id 10001 -> {}", repository.findById(10001));
 		
 		((org.slf4j.Logger) logger).info("Inserting -> {}", 
-				repository.insert(new Person("Tara", "Berlin", new Date())));
+				repository.save(new Person("Tara", "Berlin", new Date())));
 		
 		((org.slf4j.Logger) logger).info("Update 10003 -> {}", 
-				repository.update(new Person(10003, "Pieter", "Utrecht", new Date())));
+				repository.save(new Person(10003, "Pieter", "Utrecht", new Date())));
 		
 		repository.deleteById(10002);
 
